@@ -20,6 +20,7 @@ namespace Studio37v1._0.Controllers
 
         public IActionResult Index()
         {
+        
             return View();
         }
 

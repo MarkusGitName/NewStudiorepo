@@ -17,8 +17,10 @@ namespace Studio37v1._0
 {
     public class Startup
     {
+    
         public Startup(IConfiguration configuration)
         {
+           
             Configuration = configuration;
         }
 
@@ -34,6 +36,13 @@ namespace Studio37v1._0
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthentication()
+                .AddFacebook(options =>
+                {
+                    options.AppId = "258293452222707";
+                    options.AppSecret = "ba65190c8388ae35e8a5073370e075df";
+                })
+                ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
